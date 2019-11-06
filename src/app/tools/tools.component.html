@@ -1,0 +1,8 @@
+<mat-form-field >
+    <input matInput [(ngModel)]='title' placeholder="Add Note title" >
+</mat-form-field>
+
+<button mat-icon-button (click)=setTitle()> <mat-icon>add</mat-icon></button>
+
+<p>Title from input: {{title}} </p>
+<p>Title from input when add is pressed: {{shownTitle}} </p>
