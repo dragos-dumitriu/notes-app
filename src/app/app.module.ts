@@ -10,12 +10,14 @@ import { NoteComponent } from './note/note.component';
 import { ToolsComponent } from './tools/tools.component';
 import {MatButtonModule, MatIconModule, MatInputModule, MatFormFieldModule} from '@angular/material';
 import { FormsModule } from '@angular/forms';
+import { FilterComponent } from './filter/filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NoteComponent,
-    ToolsComponent
+    ToolsComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
