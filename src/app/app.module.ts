@@ -14,6 +14,7 @@ import { FilterComponent } from './filter/filter.component';
 import { AddNoteComponent } from './add-note/add-note.component';
 import { HomeComponent } from './home/home.component';
 import { Routes, RouterModule } from '@angular/router';
+import { NoteService } from './services/note.service';
 
 const appRoutes:Routes=[
   { path: "", component: HomeComponent, pathMatch:'full' },
@@ -43,7 +44,7 @@ const appRoutes:Routes=[
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [NoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
