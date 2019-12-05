@@ -1,3 +1,3 @@
-<app-filter></app-filter>
+<app-filter  (emitCategory)="receiveCategory($event)"></app-filter>
 <app-tools></app-tools>
-<app-note></app-note>
+<app-note [categoryId]="categoryId"></app-note>

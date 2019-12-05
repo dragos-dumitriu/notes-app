@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Note } from '../note/note.component';
+import { Note } from '../interfaces/note.model';
+
 
 @Injectable()
 export class NoteService {
@@ -7,12 +8,14 @@ export class NoteService {
     {
         id: "Id1",
         title: "First note",
-        description: "This is the description for the first note"
+        description: "This is the description for the first note",
+        idCategory:"1"
     },
     {
         id: "Id1",
         title: "Second note",
-        description: "This is the description for the second note"
+        description: "This is the description for the second note",
+        idCategory:"3"
     }
 ];
 
@@ -25,5 +28,8 @@ export class NoteService {
   getNotes() {
       return this.notes;
 }
-
+ 
+getFiltredNotes( categoryId:string) {
+    return this.notes.filter(note=>note.idCategory===categoryId);
+}
 }

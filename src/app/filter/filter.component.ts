@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Category } from '../interfaces/category.model';
+
 
 @Component({
   selector: 'app-filter',
@@ -12,14 +14,19 @@ export class FilterComponent implements OnInit {
   {name:'Done', id:'2'},
   {name:'Doing', id:'3'}
   ];
+
+  @Output() emitCategory = new EventEmitter<string>();
   constructor() { }
+  
+  selectFilter(categoryId: string) {
+    this.emitCategory.emit(categoryId);
+  }
+
+
+
 
   ngOnInit() {
   }
 
 }
 
-export interface Category {
-  name: string;
-  id: string;
-}
