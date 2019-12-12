@@ -1,6 +1,7 @@
 export interface Note {
 	id: string;
   title: string;
-   description: string;
-   idCategory:string;
+   text: string;
+   category:string;
+   ownerId:string;
 }

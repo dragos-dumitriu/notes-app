@@ -2,17 +2,21 @@
 
 <form class="add-note-form">
     <mat-form-field>
-        <input matInput [ngModel]="titleNote"
+        <input matInput [(ngModel)]="titleNote"
         [ngModelOptions]="{ standalone: true }" />
     </mat-form-field>
 
     <mat-form-field>
-        <textarea matInput [ngModel]="descriptionNote"
+        <textarea matInput [(ngModel)]="descriptionNote"
         [ngModelOptions]="{ standalone: true }">
         </textarea>
     </mat-form-field>
-        
+<mat-form-field >
+    <mat-label>Chooise a catgeory </mat-label>
+    <mat-select *ngIf="categories" [(value)]="selectedCategoryId">
+        <mat-option *ngFor="let categ of categories" [value]="categ.id">{{categ.name}}</mat-option>
+    </mat-select>
+</mat-form-field>        
 </form>
-
-<button mat-button>Add</button>
+<button mat-button  (click)="addNote()" routerLink="">Add</button>
       
