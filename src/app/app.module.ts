@@ -8,14 +8,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
 import { NoteComponent } from './note/note.component';
 import { ToolsComponent } from './tools/tools.component';
-import {MatButtonModule, MatIconModule, MatInputModule, MatFormFieldModule, MatCardModule, MatSelectModule} from '@angular/material';
+import {MatButtonModule, MatIconModule, MatInputModule, MatFormFieldModule, MatCardModule} from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { FilterComponent } from './filter/filter.component';
 import { AddNoteComponent } from './add-note/add-note.component';
 import { HomeComponent } from './home/home.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NoteService } from './services/note.service';
-import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes:Routes=[
   { path: "", component: HomeComponent, pathMatch:'full' },
@@ -35,10 +34,8 @@ const appRoutes:Routes=[
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSelectModule,
     MatCardModule,
     MatInputModule,
     MatButtonModule,
