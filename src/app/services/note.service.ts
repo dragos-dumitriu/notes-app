@@ -41,7 +41,7 @@ export class NoteService {
   
 
   getNotes():Observable<Note[]> {
-     return this.httpClient.get<Note[]>(this.baseUrl+`/notes/owner/${this.ownerId}`);
+     return this.httpClient.get<Note[]>(this.baseUrl+`/notes/owner/${this.ownerId}`, this.httpOptions);
 }
  
 getFiltredNotes( categoryId:string) {
@@ -66,6 +66,6 @@ addNote(noteTitle:string, noteDescription:string, noteCategoryId:string){
                 }
 
   
-  return  this.httpClient.post<Note>(this.baseUrl+"/notes", note, this.httpOptions).subscribe();
+  this.httpClient.post<Note>(this.baseUrl+"/notes", note, this.httpOptions).subscribe(result=> console.log(result));
 }
 }

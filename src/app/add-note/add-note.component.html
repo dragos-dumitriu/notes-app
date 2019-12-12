@@ -12,7 +12,7 @@
         </textarea>
     </mat-form-field>
 <mat-form-field >
-    <mat-label>Chooise a catgeory </mat-label>
+    <mat-label>Choose a category </mat-label>
     <mat-select *ngIf="categories" [(value)]="selectedCategoryId">
         <mat-option *ngFor="let categ of categories" [value]="categ.id">{{categ.name}}</mat-option>
     </mat-select>
