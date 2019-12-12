@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Category } from '../interfaces/category.model';
+import { NoteService } from '../services/note.service';
 
 
 @Component({
@@ -9,23 +10,17 @@ import { Category } from '../interfaces/category.model';
 })
 export class FilterComponent implements OnInit {
 
-  categories:Category[] = [
-  {name:'To Do', id:'1'},
-  {name:'Done', id:'2'},
-  {name:'Doing', id:'3'}
-  ];
+ categories:Category[];
 
   @Output() emitCategory = new EventEmitter<string>();
-  constructor() { }
+  constructor(private noteService :NoteService) { }
   
   selectFilter(categoryId: string) {
     this.emitCategory.emit(categoryId);
   }
 
-
-
-
   ngOnInit() {
+this.categories= this.noteService.getCategories();
   }
 
 }
